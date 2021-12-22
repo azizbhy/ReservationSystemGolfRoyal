@@ -19,15 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f54b4ed3-bf26-415f-a2bc-f299c0e0ae40" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/AppKernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AppKernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/routing.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/symfony_requirements" beforeDir="false" afterPath="$PROJECT_DIR$/bin/symfony_requirements" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/SymfonyRequirements.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/SymfonyRequirements.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/config.php" afterDir="false" />
-    </list>
+    <list default="true" id="f54b4ed3-bf26-415f-a2bc-f299c0e0ae40" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -112,7 +104,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1640171651607</updated>
-      <workItem from="1640171666018" duration="4252000" />
+      <workItem from="1640171666018" duration="4617000" />
     </task>
     <servers />
   </component>
@@ -135,10 +127,10 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1380" y="175" key="#CLI_Interpreters/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1640172034039" />
-    <state x="-1167" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1640176479510">
+    <state x="-1167" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1640177101626">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1167" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1640176479510" />
+    <state x="-1167" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1640177101626" />
     <state x="-1236" y="397" key="ComposerCompositePathDialog" timestamp="1640172039803">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
