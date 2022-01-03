@@ -10,4 +10,42 @@ namespace HotelBundle\Repository;
  */
 class RoomRepository extends \Doctrine\ORM\EntityRepository
 {
+
+    public function check_availibility($arrive, $sort){
+        $em =$this->getEntityManager();
+
+        $sub = $em->createQuery(' select r.id from HotelBundle:Room r join HotelBundle:Reservation res
+ where  (( :arrive BETWEEN res.dateArrive and res.dateSortie )
+                 or (:sort BETWEEN res.dateArrive and res.dateSortie )) and (res.room = r.id)
+        ')->setParameters(array(
+            'arrive'=> $arrive,
+            'sort'=>$sort))->getResult();
+
+        if ($sub == null) {
+            $query = $em->createQuery(
+                'select ro.id from HotelBundle:Room ro ')->getResult();
+            return $query;
+        }
+
+        $query = $em->createQuery(
+            'select ro.id from HotelBundle:Room ro where ro.id not in ( :sub)')->setParameter('sub',$sub)->getResult();
+        return $query;
+
+    }
+
+    public function check_occupied(){
+    /*    $em =$this->getEntityManager();
+
+
+        $sub = $em->createQuery(' select r.id from HotelBundle:Room r join HotelBundle:Reservation res 
+ with (res.room = r.id ) and :arrive BETWEEN res.dateArrive and res.dateSortie
+                 and :sort BETWEEN res.dateArrive and res.dateSortie
+        ')->setParameters(array(
+            'arrive'=> $arrive,
+            'sort'=>$sort))->getResult();
+
+        $query = $em->createQuery(
+            'select r.titre from HotelBundle:Room r where r.id not in :sub')->setParameters('sub',$sub);
+        return $query->getResult();*/
+    }
 }

@@ -8,6 +8,7 @@ imports:
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+    image_directory: '%kernel.project_dir%/web/room_Img'
 
 framework:
     #esi: ~
@@ -31,6 +32,8 @@ framework:
     assets: ~
     php_errors:
         log: true
+    templating:
+        engines: ['twig', 'php']
 
 # Twig Configuration
 twig:

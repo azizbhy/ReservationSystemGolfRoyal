@@ -1,0 +1,44 @@
+{% extends 'calendar.html.twig' %}
+
+{% block body %}
+
+    <h1>rooms list</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Idroom</th>
+            <th>Datearrive</th>
+            <th>Datesortie</th>
+            <th>Idtype</th>
+            <th>Idclient</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for room in rooms %}
+            <tr>
+                <td></td>
+                <td>{{ room.id }}</td>
+
+
+                <td>
+                    <ul>
+                        <li>
+                        </li>
+                        <li>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('reservation_new', {'id': reservation.id}) }}">Confirm</a>
+        </li>
+    </ul>
+{% endblock %}

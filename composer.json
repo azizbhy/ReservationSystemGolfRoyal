@@ -5,8 +5,7 @@
     "description": "The \"Symfony Standard Edition\" distribution",
     "autoload": {
         "psr-4": {
-            "AppBundle\\": "src/AppBundle",
-            "HotelBundle\\" : "src/HotelBundle"
+            "": "src/"
         },
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
     },
@@ -21,11 +20,13 @@
         "incenteev/composer-parameter-handler": "^2.0",
         "sensio/distribution-bundle": "^5.0.19",
         "sensio/framework-extra-bundle": "^5.0.0",
+        "sonata-project/admin-bundle": "^3.43",
         "symfony/monolog-bundle": "^3.1.0",
         "symfony/polyfill-apcu": "^1.0",
         "symfony/swiftmailer-bundle": "^2.6.4",
         "symfony/symfony": "3.4.*",
-        "twig/twig": "^1.0||^2.0"
+        "twig/twig": "^1.0||^2.0",
+        "rewieer/taskschedulerbundle": "^0.10.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
@@ -46,12 +47,6 @@
         "post-update-cmd": [
             "@symfony-scripts"
         ]
-    },
-    "config": {
-        "platform": {
-            "php": "5.6"
-        },
-        "sort-packages": true
     },
     "extra": {
         "symfony-app-dir": "app",

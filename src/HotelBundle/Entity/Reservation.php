@@ -19,13 +19,23 @@ class Reservation
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
+
     private $id;
 
      /**
       *@ORM\ManyToOne(targetEntity="Room" , inversedBy="reservations")
-      * @ORM\JoinColumn (name="roomId" , referencedColumnName="id")
+      * @ORM\JoinColumn (name="roomId" , referencedColumnName="id", nullable= true)
      */
     private $room;
+
+    /**
+     * Reservation constructor.
+     * @param \DateTime $dateArrive
+     */
+    public function __construct()
+    {
+        $this->setDateCreation(new \DateTime());
+    }
 
     /**
      * @return mixed
@@ -45,7 +55,8 @@ class Reservation
 
 
     /**
-     *@ORM\OneToOne(targetEntity="typeChambre")
+     *@ORM\ManyToOne(targetEntity="typeChambre" , inversedBy="reservations")
+     * @ORM\JoinColumn (name="typeChambreId" , referencedColumnName="id")
      */
     private $typeChambre;
 
@@ -65,39 +76,51 @@ class Reservation
         $this->room = $room;
     }
 
-
     /**
-     * @var int
-     *
-     * @ORM\Column(name="id_Room", type="integer")
+     * @return \DateTime
      */
-    private $idRoom;
+    public function getDateCreation()
+    {
+        return $this->date_creation;
+    }
 
     /**
-     * @var \DateTime
+     * @param \DateTime $date_creation
+     */
+    public function setDateCreation($date_creation)
+    {
+        $this->date_creation = $date_creation;
+    }
+
+
+
+
+    /**
+     * @var \Date
      *
      * @ORM\Column(name="date_arrive", type="date")
      */
     private $dateArrive;
 
     /**
-     * @var \DateTime
+     * @var \Date
+     *
+     * @ORM\Column(name="date_creation", type="datetime")
+     */
+    private $date_creation;
+
+    /**
+     * @var \Date
      *
      * @ORM\Column(name="date_sortie", type="date")
      */
     private $dateSortie;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="id_type", type="integer")
-     */
-    private $idType;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="id_client", type="integer")
+     * @ORM\Column(name="id_client", type="integer", nullable= true)
      */
     private $idClient;
 
@@ -112,34 +135,11 @@ class Reservation
         return $this->id;
     }
 
-    /**
-     * Set idRoom
-     *
-     * @param integer $idRoom
-     *
-     * @return Reservation
-     */
-    public function setIdRoom($idRoom)
-    {
-        $this->idRoom = $idRoom;
-
-        return $this;
-    }
-
-    /**
-     * Get idRoom
-     *
-     * @return int
-     */
-    public function getIdRoom()
-    {
-        return $this->idRoom;
-    }
 
     /**
      * Set dateArrive
      *
-     * @param \DateTime $dateArrive
+     * @param \Date $dateArrive
      *
      * @return Reservation
      */
@@ -153,7 +153,7 @@ class Reservation
     /**
      * Get dateArrive
      *
-     * @return \DateTime
+     * @return \Date
      */
     public function getDateArrive()
     {
@@ -163,7 +163,7 @@ class Reservation
     /**
      * Set dateSortie
      *
-     * @param \DateTime $dateSortie
+     * @param \Date $dateSortie
      *
      * @return Reservation
      */
@@ -177,36 +177,14 @@ class Reservation
     /**
      * Get dateSortie
      *
-     * @return \DateTime
+     * @return \Date
      */
     public function getDateSortie()
     {
         return $this->dateSortie;
     }
 
-    /**
-     * Set idType
-     *
-     * @param integer $idType
-     *
-     * @return Reservation
-     */
-    public function setIdType($idType)
-    {
-        $this->idType = $idType;
 
-        return $this;
-    }
-
-    /**
-     * Get idType
-     *
-     * @return int
-     */
-    public function getIdType()
-    {
-        return $this->idType;
-    }
 
     /**
      * Set idClient

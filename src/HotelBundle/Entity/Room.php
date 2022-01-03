@@ -3,6 +3,7 @@
 namespace HotelBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Room
@@ -43,6 +44,52 @@ class Room
     private $reservations;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="checkin", type="date", nullable = true)
+     */
+    private $checkin;
+
+    /**
+     * @return \DateTime
+     */
+    public function getCheckin()
+    {
+        return $this->checkin;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCheckout()
+    {
+        return $this->checkout;
+    }
+
+    /**
+     * @param string $checkout
+     */
+    public function setCheckout($checkout)
+    {
+        $this->checkout = $checkout;
+    }
+
+    /**
+     * @param \DateTime $checkin
+     */
+    public function setCheckin($checkin)
+    {
+        $this->checkin = $checkin;
+    }
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="checkout", type="date", nullable= true)
+     */
+    private $checkout;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="titre", type="string", length=255)
@@ -58,8 +105,10 @@ class Room
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="img", type="string", length=255)
+     * @Assert\File(mimeTypes={ "image/jpeg" , "image/png" , "image/tiff" , "image/svg+xml"})
+     * @Assert\NotBlank(message="plz enter an image")
+     * @Assert\Image()
+     * @ORM\Column(name="img",type="string",length=255,nullable=true)
      */
     private $img;
 
